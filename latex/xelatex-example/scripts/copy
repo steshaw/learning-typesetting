@@ -1,3 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+prefix=$1
+
 for compiler in lualatex xelatex; do
-  scp out/${compiler}/intro.pdf nice.local:intro.${compiler}.pdf
+  scp "out/${compiler}/${prefix}.pdf" "nice.local:${prefix}.${compiler}.pdf"
 done

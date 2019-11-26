@@ -1,1 +1,7 @@
-b && copy
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+prefix=$1
+
+b "${prefix}"  && copy ${prefix}

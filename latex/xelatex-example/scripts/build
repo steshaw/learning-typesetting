@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
+prefix=$1
+
 for compiler in lualatex xelatex; do
   mkdir -p out/${compiler}
-  ${compiler} --halt-on-error --output-directory=out/${compiler} intro.tex
+  ${compiler} --halt-on-error --output-directory=out/${compiler} "${prefix}.tex"
 done
