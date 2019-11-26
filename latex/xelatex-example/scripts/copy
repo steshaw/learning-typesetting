@@ -1,0 +1,3 @@
+for compiler in lualatex xelatex; do
+  scp out/${compiler}/intro.pdf nice.local:intro.${compiler}.pdf
+done

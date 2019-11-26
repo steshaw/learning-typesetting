@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+for compiler in lualatex xelatex; do
+  mkdir -p out/${compiler}
+  ${compiler} --halt-on-error --output-directory=out/${compiler} intro.tex
+done
