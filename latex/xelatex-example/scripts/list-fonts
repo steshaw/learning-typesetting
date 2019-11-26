@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail # strict
+
+#
+# Pass further patterns like :mono for monospaced fonts.
+#
+
+fc-list :lang=en "$@" family | sort -u
