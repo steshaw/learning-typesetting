@@ -16,13 +16,17 @@ compilers=(
   xelatex
 )
 
-copy() {
-  if [[ $copy -eq 1 ]]; then
-    scp "out/${compiler}/${prefix}.pdf" "${copy_host}:${prefix}.${compiler}.pdf"
-  fi
-}
-
 for compiler in "${compilers[@]}"; do
+  copy() {
+    if [[ $copy -eq 1 ]]; then
+      scp "out/${compiler}/${prefix}.pdf" "${copy_host}:${prefix}.${compiler}.pdf"
+    fi
+  }
+
+  failed() {
+    bat "${out_dir}/stdout.log"
+  }
+
   out_dir="out/${compiler}"
   mkdir -p "${out_dir}"
 
@@ -32,8 +36,8 @@ for compiler in "${compilers[@]}"; do
     --halt-on-error \
     --output-directory="${out_dir}" \
     "${prefix}.tex" \
-    >"${out_dir}/${prefix}.stdout.log" \
+    >"${out_dir}/stdout.log" \
     && copy \
-    || echo FAILED
+    || failed
   echo "-----------------------"
 done
