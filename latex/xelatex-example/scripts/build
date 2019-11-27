@@ -22,9 +22,16 @@ for compiler in "${compilers[@]}"; do
       scp "out/${compiler}/${prefix}.pdf" "${copy_host}:${prefix}.${compiler}.pdf"
     fi
   }
-
   failed() {
-    bat "${out_dir}/stdout.log"
+    bat --paging=never "${out_dir}/${prefix}.stdout.log"
+  }
+  compile() {
+    ${compiler} \
+      --halt-on-error \
+      --interaction=batchmode \
+      --output-directory="${out_dir}" \
+      "${prefix}.tex" \
+      >"${out_dir}/${prefix}.stdout.log"
   }
 
   out_dir="out/${compiler}"
@@ -32,12 +39,10 @@ for compiler in "${compilers[@]}"; do
 
   echo "-----------------------"
   echo "----- ${compiler} -----"
-  ${compiler} \
-    --halt-on-error \
-    --output-directory="${out_dir}" \
-    "${prefix}.tex" \
-    >"${out_dir}/stdout.log" \
-    && copy \
-    || failed
+  if compile; then
+    copy
+  else
+    failed
+  fi
   echo "-----------------------"
 done

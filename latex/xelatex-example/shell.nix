@@ -2,12 +2,10 @@
 with pkgs;
 mkShell {
   buildInputs = [
-    (
-      texlive.combine {
+    ( texlive.combine {
         inherit (texlive)
           scheme-small
           ;
-      }
-    )
+    })
   ];
 }

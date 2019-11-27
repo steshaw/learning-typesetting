@@ -1,0 +1,15 @@
+%
+% See https://stackoverflow.com/a/57076064/482382
+%
+% Sadly will not work without harflatex or hblualatex :-(.
+%
+
+\documentclass{minimal}
+\usepackage{harfload}
+\usepackage{fontspec}
+
+\begin{document}
+\noindent
+\fontspec{Noto Color Emoji}[RawFeature={mode=harf}]
+☃⛄💩🏩🏨🕐🕜💫🀇🍣🤮🤯👨‍👩‍👧‍👦\quad 👩‍❤️‍💋‍👨
+\end{document}
