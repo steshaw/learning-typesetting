@@ -1,27 +1,26 @@
 \documentclass{article}
 \usepackage{fontspec}
 
-%\setmainfont[Renderer=Harfbuzz]{Noto Color Emoji}
-%\setmainfont{Noto Color Emoji}
-%\setmainfont{NotoEmoji}
-
-%\setromanfont{Liberation Serif}
-\setsansfont{Noto Emoji}
-%\setmonofont{Source Code Pro}
+\setromanfont{Liberation Serif}
+\setsansfont{Liberation Sans}
+\setmonofont{Source Code Pro}
 
 \begin{document}
-  This is \textbf{Noto Emoji} font sans.
-{ \fontspec{Noto Emoji} 😺 👅 }\newline
-{\texttt\newline
-01025fa Remove 'Yes is Nix'\newline
-fa75c02 {\fontspec{Noto Emoji}🔧} SpaceVim: disable lsp\newline
-f3da6d3 Remove debug environment variables\newline
-aa27fcf git-list-large: make --top an option\newline
-913b9e4 {\fontspec{Noto Emoji}🔧} git-list-large: show top 40\newline
-674153e {\fontspec{Noto Emoji}⚡️} Much faster git-list-large\newline
-e7f52b7 Add git-list-large\newline
-25a5405 {\fontspec{Noto Emoji}🔧} NixOS: enable eternal-terminal\newline
-a514632 {\fontspec{Noto Emoji}➕} Nix: add eternal-terminal\newline
-899a3ab {\fontspec{Noto Emoji}🔧} Sync karabiner\newline
+
+  This is \textbf{Noto Emoji}: {\fontspec{Noto Emoji}😺} {\fontspec{Noto Emoji}👅}.
+  {\fontspec{Source Code Pro} Source Code Pro}\newline
+{
+\fontspec{Source Code Pro}\newline
+01025fa Remove `Yes is Nix'\newline%
+fa75c02 {\fontspec{Noto Emoji}🔧} SpaceVim: disable lsp\newline%
+f3da6d3 Remove debug environment variables\newline%
+aa27fcf git-list-large: make --top an option\newline%
+913b9e4 {\fontspec{Noto Emoji}🔧} git-list-large: show top 40\newline%
+674153e {\fontspec{Noto Emoji}⚡️} Much faster git-list-large\newline%
+e7f52b7 Add git-list-large\newline%
+25a5405 {\fontspec{Noto Emoji}🔧} NixOS: enable eternal-terminal\newline%
+a514632 {\fontspec{Noto Emoji}➕} Nix: add eternal-terminal\newline%
+899a3ab {\fontspec{Noto Emoji}🔧} Sync karabiner\newline%
 }
+
 \end{document}
