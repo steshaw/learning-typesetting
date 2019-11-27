@@ -1,4 +1,5 @@
 \documentclass[14pt]{article}
+\usepackage{fancyvrb}
 \usepackage{fontspec}
 
 % -------------------------------------------------------------------------
@@ -30,20 +31,19 @@
 
   \maketitle
 
-   This an \textit{example} of document compiled with
-   \textbf{xelatex} compiler. If you have to write
-   some code
+  This an \textit{example} of document compiled with \textbf{xelatex} compiler.
+  If you have to write some code
 
-   \begin{verbatim}
-usually this environment is used to display code
-
-<html>
-  <head><title>Boo</title></head>
-  <body>
-    <h1>Hello World</h1>
-  </body>
-</html>
-   \end{verbatim}
+  \begin{Verbatim}[gobble = 4]
+    Usually this environment is used to display code:
+    <html>
+      <head><title>Boo</title></head>
+      <body>
+        <h1>Hello World</h1>
+      </body>
+    </html>
+    This is the end, my only friend, the end.
+  \end{Verbatim}
 
   {\sffamily This is a sample text in \textbf{Sans Serif Font Typeface}}
 
