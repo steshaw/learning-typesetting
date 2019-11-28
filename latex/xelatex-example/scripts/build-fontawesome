@@ -1,0 +1,1 @@
+lualatex fontawesome.tex && scp fontawesome.pdf nice.local:fontawesome.lualatex.pdf

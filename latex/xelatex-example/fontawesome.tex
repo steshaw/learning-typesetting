@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{fontawesome}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{linkcolor}{rgb}{0, 0.2, 0.6}
+\hypersetup{colorlinks, breaklinks, urlcolor = linkcolor, linkcolor = linkcolor}
+
+\setmainfont{Liberation Sans}
+
+\newfontfamily{\faf}{FontAwesome}
+
+\newcommand\faIcon[1]{{\faf #1\ }}
+
+\newcommand\twitter{\faIcon{\char"F099}}
+\newcommand\twitterSquare{\faIcon{\char"F081}}
+\newcommand\homeSolid{\faIcon{\char"F015}}
+\newcommand\pie{\faIcon{\char"F705}}
+\newcommand\linkedin{\faIcon{\char"F0E1}}
+\newcommand\github{\faIcon{\char"F09B}}
+
+\title{Font Awesome}
+\author{
+  Steven Shaw
+  Loves programming languages
+}
+\date{Nov, 2019}
+
+\begin{document}
+
+  \maketitle
+
+  Some Font Awesome icons:
+
+  Manual
+
+  fa-twitter \twitter{}
+  fa-twitter-square \twitterSquare{}
+  fa-home-solid \homeSolid{}
+  fa-pie \pie{}
+  fa-linkedin \linkedin{}
+  fa-github \github{}
+
+  Render
+
+  \href{https://twitter.com/steshaw}{\twitter @steshaw}
+  \href{https://steshaw.org/}{\homeSolid steshaw.org}
+
+  Package
+
+  \faicon{home}
+  \faicon{twitter}
+  \faicon{github}
+  \faStackOverflow{}
+  \faicon{linkedin}
+  \faicon{cloud}
+  \faicon{code}
+  \faicon{linux}
+  \faicon{apple}
+  \faicon{laptop}
+  \faicon{laptopCode}
+  \faicon{pie}
+
+\end{document}

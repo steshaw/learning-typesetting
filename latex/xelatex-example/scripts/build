@@ -27,8 +27,7 @@ for compiler in "${compilers[@]}"; do
   }
   compile() {
     ${compiler} \
-      --halt-on-error \
-      --interaction=batchmode \
+      --interaction=nonstopmode \
       --output-directory="${out_dir}" \
       "${prefix}.tex" \
       >"${out_dir}/${prefix}.stdout.log"
@@ -37,12 +36,18 @@ for compiler in "${compilers[@]}"; do
   out_dir="out/${compiler}"
   mkdir -p "${out_dir}"
 
-  echo "-----------------------"
   echo "----- ${compiler} -----"
-  if compile; then
-    copy
+
+  # fontawesome only works in lualatex.
+  if [[ ${prefix} = 'fontawesome' && ${compiler} != lualatex ]]; then
+    echo "Skipping as broken"
   else
-    failed
+    if compile; then
+      copy
+    else
+      failed
+    fi
   fi
+
   echo "-----------------------"
 done

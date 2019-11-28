@@ -4,7 +4,9 @@ mkShell {
   buildInputs = [
     ( texlive.combine {
         inherit (texlive)
-          scheme-small
+          scheme-medium
+
+          fontawesome
           ;
     })
   ];
